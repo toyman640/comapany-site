@@ -109,7 +109,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'adeyor@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
 
-print(EMAIL_HOST_PASSWORD)
+
 
 
 # Password validation

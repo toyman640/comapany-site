@@ -2,11 +2,18 @@ from django.shortcuts import render, redirect
 from django.core import mail
 from django.core.mail import EmailMessage
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.contrib import messages
+from .models import *
+import random
 
 # Create your views here.
+def generate_num():
+    return "%0.12d" % random.randint(0, 999999999999)
+
+
 
 def index(request):
     if request.method == "POST":
@@ -69,3 +76,9 @@ def contact(request):
         else:
             messages.error(request, 'Email not sent')
     return render(request, 'contact.html')
+
+def blog(request):
+    return render(request, 'blog.html')
+
+def blog_detail(request):
+    return render(request, 'detail.html')

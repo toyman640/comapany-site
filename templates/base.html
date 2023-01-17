@@ -81,9 +81,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
+                    {% url 'index' as Home %}
+                    {% url 'website:about' as About %}
+                    {% url 'website:service' as Service %}
+                    {% url 'website:contact' as Contact %}
                     <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
                     <a href="{% url 'website:about' %}" class="nav-item nav-link">About</a>
                     <a href="{% url 'website:service' %}" class="nav-item nav-link">Service</a>
+                    <a href="{% url 'website:blog' %}" class="nav-item nav-link">Blog</a>
                     <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
@@ -95,7 +100,7 @@
                         </div>
                     </div> -->
                     <a href="{% url 'website:contact' %}" class="nav-item nav-link">Contact</a>
-                    <a href="" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Get A Quote <i class="bi bi-arrow-right"></i></a>
+                    <!-- <a href="" class="nav-item nav-link bg-primary text-white px-5 ms-3 d-none d-lg-block">Get A Quote <i class="bi bi-arrow-right"></i></a> -->
                 </div>
             </div>
         </nav>
