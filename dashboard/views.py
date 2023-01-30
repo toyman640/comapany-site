@@ -25,7 +25,7 @@ def post(request):
             for form in formset.cleaned_data:
                 if form:
                     image = form['image']
-                    photo = Images(post=post_form, image=image)
+                    photo = Images(blog=post_form, image=image)
                     photo.save()
             messages.success(request, "Posted Successfully")
 
@@ -39,3 +39,8 @@ def post(request):
     
     return render(request, 'dashboard/post-page.html', {'postForm' : postForm, 'formset' : formset})
             
+def bolg_view(request):
+    view_b = Blog.objects.all()
+   
+
+    return render(request, 'dashboard/quick-view.html', {'view': view_b})

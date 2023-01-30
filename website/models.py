@@ -17,5 +17,5 @@ def get_image_filename(instance, filename):
     return "post_images/%s-%s" % (slug, filename)
 
 class Images(models.Model):
-    blog = models.ForeignKey(Blog, default=None, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, default=None, on_delete=models.CASCADE, related_name='blogimages')
     image = models.ImageField(upload_to=get_image_filename, verbose_name="Image")
