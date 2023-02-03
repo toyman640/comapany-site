@@ -18,4 +18,4 @@ def get_image_filename(instance, filename):
 
 class Images(models.Model):
     blog = models.ForeignKey(Blog, default=None, on_delete=models.CASCADE, related_name='blogimages')
-    image = models.ImageField(upload_to=get_image_filename, verbose_name="Image")
+    image = models.ImageField(upload_to='uploads/', verbose_name="Image")
