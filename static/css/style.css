@@ -269,3 +269,21 @@
     background: var(--primary);
     transform: skew(40deg);
 }
+
+#log-page{
+    background-image: url('../img/login-bg1.jpg');
+    height: 100%;
+    /* background-size: cover; */
+    background-position: center;
+    /* background-repeat: no-repeat; */
+}
+
+.layer{
+    margin-top: 200px !important;
+    background-color: rgba(138, 86, 68, 0.349);
+    border-radius: 5px;
+}
+
+.login-form{
+    padding-bottom: 20px;
+}

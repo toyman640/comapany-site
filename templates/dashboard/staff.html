@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-    <div class="container-fluid col-lg-4 col-sm-6 mt-5 pt-5">
-        <form action="" method="post">
+<body id="log-page">
+    <div class="container-fluid col-lg-4 col-sm-6 mt-5 pt-5 layer">
+        <form action="" method="post" class="login-form">
             {% if messages %}
             {% for m in messages %}
              <div class="alert {{ m.tags }}">
@@ -21,19 +23,30 @@
             <div class="form-group">
               <label for="exampleInputEmail1">Username</label>
               <input type="text" name="username" class="form-control"  placeholder="Enter username">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
               <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" onclick="myFunction()">
+              <label class="form-check-label" for="exampleCheck1">Show Password</label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
     </div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("exampleInputPassword1")
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

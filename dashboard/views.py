@@ -3,6 +3,7 @@ from django.forms import modelformset_factory
 from website.forms import *
 from website.models import *
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponse
 
@@ -22,14 +23,18 @@ def login_page(request):
             messages.error(request, 'Email or password incorrect, check details or contact admin')
     return render(request, 'dashboard/staff.html')
 
+@login_required(login_url='/')
 def logout_view(request):
     logout(request)
-    return redirect('login-page/')
+    return redirect('/')
 
+
+@login_required(login_url='/')
 def dashboard(request):
     
     return render(request, 'dashboard/dashboard.html')
 
+@login_required(login_url='/')
 def post(request):
     ImageFormSet = modelformset_factory(Images, form=ImageForm, extra=3)
 
@@ -57,7 +62,9 @@ def post(request):
         formset = ImageFormSet(queryset=Images.objects.none())
     
     return render(request, 'dashboard/post-page.html', {'postForm' : postForm, 'formset' : formset})
-            
+
+
+@login_required(login_url='/')
 def bolg_view(request):
     view_b = Blog.objects.all()
    
