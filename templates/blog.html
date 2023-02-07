@@ -27,24 +27,31 @@ Blog-posts
             <h1 class="display-5 text-uppercase mb-4">Latest <span class="text-primary">Articles</span> From Our Blog Post</h1>
         </div>
         <div class="row g-5">
+            {% for b in blog_post %}
             <div class="col-lg-4 col-md-6">
                 <div class="bg-light">
-                    <img class="img-fluid" src="{% static 'img/blog-1.jpg' %}" alt="">
+                    {% for image in b.blogimages.all %}
+                    <img class="img-fluid" src="{{ image.image.url }}" alt="">
+                    {% endfor %}
                     <div class="p-4">
                         <div class="d-flex justify-content-between mb-4">
+                            
                             <div class="d-flex align-items-center">
+                                {% for image in a.blogimages.all %}
                                 <img class="rounded-circle me-2" src="{% static 'img/user.jpg' %}" width="35" height="35" alt="">
+                                {% endfor %}
                                 <span>John Doe</span>
                             </div>
                             <div class="d-flex align-items-center">
-                                <span class="ms-3"><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</span>
+                                <span class="ms-3"><i class="far fa-calendar-alt text-primary me-2"></i>{{ b.date|date:"M d, Y" }}</span>
                             </div>
                         </div>
-                        <h4 class="text-uppercase mb-3">Rebum diam clita lorem erat magna est erat</h4>
+                        <h4 class="text-uppercase mb-3">{{ b.title }}</h4>
                         <a class="text-uppercase fw-bold" href="{% url 'website:blog_detail' %}">Read More <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+            {% endfor %}
             <div class="col-lg-4 col-md-6">
                 <div class="bg-light">
                     <img class="img-fluid" src="{% static 'img/blog-2.jpg' %}" alt="">
