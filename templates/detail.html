@@ -24,33 +24,38 @@ Post detail
     <!-- Blog Start -->
     <div class="container-fluid py-6 px-5">
         <div class="row g-5">
+            {% if post_detail %}
             <div class="col-lg-8">
                 <!-- Blog Detail Start -->
                 <div class="mb-5">
-                    <img class="img-fluid w-100 rounded mb-5" src="{% static 'img/blog-2.jpg' %}" alt="">
-                    <h1 class="text-uppercase mb-4">Diam dolor duo ipsum clita sed lorem tempor. Clita kasd diam justo diam
-                        lorem sed amet sed rebum eos.</h1>
-                    <h5><i class="fas fa-bath col-3"> 3</i> <i class="fas fa-toilet col-3"> 3</i><i class="fas fa-bed col-3"> 5</i></h5>
-                    <p>Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut
-                        magna lorem. Nonumy vero labore lorem sanctus rebum et lorem magna kasd, stet
-                        amet magna accusam consetetur eirmod. Kasd accusam sit ipsum sadipscing et at at
-                        sanctus et. Ipsum sit gubergren dolores et, consetetur justo invidunt at et
-                        aliquyam ut et vero clita. Diam sea sea no sed dolores diam nonumy, gubergren
-                        sit stet no diam kasd vero.</p>
-                    <p>Voluptua est takimata stet invidunt sed rebum nonumy stet, clita aliquyam dolores
-                        vero stet consetetur elitr takimata rebum sanctus. Sit sed accusam stet sit
-                        nonumy kasd diam dolores, sanctus lorem kasd duo dolor dolor vero sit et. Labore
-                        ipsum duo sanctus amet eos et. Consetetur no sed et aliquyam ipsum justo et,
-                        clita lorem sit vero amet amet est dolor elitr, stet et no diam sit. Dolor erat
-                        justo dolore sit invidunt.</p>
-                    <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor
-                        invidunt at est sanctus sanctus. Clita dolores sit kasd diam takimata justo diam
-                        lorem sed. Magna amet sed rebum eos. Clita no magna no dolor erat diam tempor
-                        rebum consetetur, sanctus labore sed nonumy diam lorem amet eirmod. No at tempor
-                        sea diam kasd, takimata ea nonumy elitr sadipscing gubergren erat. Gubergren at
-                        lorem invidunt sadipscing rebum sit amet ut ut, voluptua diam dolores at
-                        sadipscing stet. Clita dolor amet dolor ipsum vero ea ea eos.</p>
+                    {% for image in post_detail.blogimages.all %}
+                    <!-- <img class="img-fluid w-100 rounded mb-5" src="{{ image.image.url }}" alt=""> -->
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="{{ image.image.url }}" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    {% endfor %}
+                    <h1 class="text-uppercase mb-4">{{ post_detail.title }}</h1>
+                    <p>{{ post_detail.write_up }}</p>
                 </div>
+                {% endif %}
                 <!-- Blog Detail End -->
 
                 <!-- Comment List Start -->
@@ -106,7 +111,7 @@ Post detail
                                         </div>
                                     </div>
                                     <h4 class="text-uppercase mb-3">Rebum diam clita lorem erat magna est erat</h4>
-                                    <a class="text-uppercase fw-bold" href="{% url 'website:blog_detail' %}">Read More <i class="bi bi-arrow-right"></i></a>
+                                    <a class="text-uppercase fw-bold" href="">Read More <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +129,7 @@ Post detail
                                         </div>
                                     </div>
                                     <h4 class="text-uppercase mb-3">Rebum diam clita lorem erat magna est erat</h4>
-                                    <a class="text-uppercase fw-bold" href="{% url 'website:blog_detail' %}">Read More <i class="bi bi-arrow-right"></i></a>
+                                    <a class="text-uppercase fw-bold" href="">Read More <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +147,7 @@ Post detail
                                         </div>
                                     </div>
                                     <h4 class="text-uppercase mb-3">Rebum diam clita lorem erat magna est erat</h4>
-                                    <a class="text-uppercase fw-bold" href="{% url 'website:blog_detail' %}">Read More <i class="bi bi-arrow-right"></i></a>
+                                    <a class="text-uppercase fw-bold" href="">Read More <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>

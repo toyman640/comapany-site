@@ -19,3 +19,13 @@ def get_image_filename(instance, filename):
 class Images(models.Model):
     blog = models.ForeignKey(Blog, default=None, on_delete=models.CASCADE, related_name='blogimages')
     image = models.ImageField(upload_to='uploads/', verbose_name="Image")
+
+
+class Contact(models.Model):
+    name = models.CharField(verbose_name='Name', max_length=70)
+    email = models.EmailField(verbose_name='Email', max_length=50)
+    subject = models.CharField(verbose_name='Subject', max_length=200)
+    message = models.TextField(verbose_name='Message', max_length=500)
+
+    def __str__(self):
+        return self.name

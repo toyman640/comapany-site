@@ -68,11 +68,10 @@ Company Site
                     </div>
                 </div>
                 <p class="mb-4">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos labore</p>
-                <img src="{% static 'img/signature.jpg' %}" alt="">
             </div>
             <div class="col-lg-5 pb-5" style="min-height: 400px;">
                 <div class="position-relative bg-dark-radial h-100 ms-5">
-                    <img class="position-absolute w-100 h-100 mt-5 ms-n5" src="{% static 'img/eng-2.jpg' %}" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100 mt-5 ms-n5" src="{% static 'img/cons-1.jpeg' %}" style="object-fit: cover;">
                 </div>
             </div>
         </div>
@@ -101,7 +100,7 @@ Company Site
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="{% static 'img/eng-3.jpg' %}" alt="">
+                    <img class="img-fluid" src="{% static 'img/service-3.jpg' %}" alt="">
                     <div class="service-icon bg-white">
                         <i class="fa fa-3x fa-phone-square text-primary"></i>
                     </div>
@@ -119,7 +118,7 @@ Company Site
                         <i class="fa fa-3x fa-drafting-compass text-primary"></i>
                     </div>
                     <div class="px-4 pb-4">
-                        <h4 class="text-uppercase mb-3">Architecture Design</h4>
+                        <h4 class="text-uppercase mb-3">RENOVATIONS</h4>
                         <p>Duo dolore et diam sed ipsum stet amet duo diam. Rebum amet ut amet sed erat sed sed amet magna elitr amet kasd diam duo</p>
                         <a class="btn text-primary" href="">Read More <i class="bi bi-arrow-right"></i></a>
                     </div>
@@ -130,59 +129,7 @@ Company Site
     <!-- Services End -->
 
 
-    <!-- Appointment Start -->
-    <div class="container-fluid py-6 px-5">
-        <div class="row gx-5">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <div class="mb-4">
-                    <h1 class="display-5 text-uppercase mb-4">Request A <span class="text-primary">Call Back</span></h1>
-                </div>
-                <p class="mb-5">Nonumy ipsum amet tempor takimata vero ea elitr. Diam diam ut et eos duo duo sed. Lorem elitr sadipscing eos et ut et stet justo, sit dolore et voluptua labore. Ipsum erat et ea ipsum magna sadipscing lorem. Sit lorem sea sanctus eos. Sanctus sit tempor dolores ipsum stet justo sit erat ea, sed diam sanctus takimata sit. Et at voluptua amet erat justo amet ea ipsum eos, eirmod accusam sea sed ipsum kasd ut.</p>
-                <a class="btn btn-primary py-3 px-5" href="">Get A Quote</a>
-            </div>
-            <div class="col-lg-8">
-                <div class="bg-light text-center p-5">
-                    <form method="POST">
-                        {% if messages %}
-                        {% for mes in messages %}
-                            <div class="alert alert-success">{{ mes }}</div>
-                        {% endfor %}
-                        {% endif %}
-                        {% csrf_token %}
-                        <div class="row g-3">
-                            <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control border-0" name="name" placeholder="Your Name" style="height: 55px;">
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <input type="email" class="form-control border-0" name="email" placeholder="Your Email" style="height: 55px;">
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="date" id="date" data-target-input="nearest">
-                                    <input type="text" name="date"
-                                        class="form-control border-0 datetimepicker-input"
-                                        placeholder="Call Back Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <div class="time" id="time" data-target-input="nearest">
-                                    <input type="text" name="time"
-                                        class="form-control border-0 datetimepicker-input"
-                                        placeholder="Call Back Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control border-0" name="message" rows="5" placeholder="Message"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Submit Request</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Appointment End -->
+   
 
 
     <!-- Portfolio Start -->
